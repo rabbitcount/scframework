@@ -13,15 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ScDiscoveryEurekaClientApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ScDiscoveryEurekaClientApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(ScDiscoveryEurekaClientApplication.class, args);
+	}
 
-    @Value("${server.port}")
-    private String port;
+	@Value("${server.port}")
+	String port;
 
-    @RequestMapping("/hi")
-    public String home(@RequestParam String name) {
-        return "hi " + name + ",i am from port:" + port;
-    }
+	@RequestMapping("/hi")
+	public String home(@RequestParam String name) {
+		return "hi "+name+",i am from port:" +port;
+	}
+
 }
